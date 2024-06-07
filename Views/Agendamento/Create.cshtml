@@ -1,0 +1,50 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+    ViewData["Title"] = "Criar agendamento";
+}
+@model AgendamentoModel;
+
+<h2>Novo agendamento</h2>
+
+<form asp-action="Create">
+    <div class="form-group">
+        <label asp-for="QuantidadePessoas" class="control-label">Quantidade de pessoas:</label>
+        <input asp-for="QuantidadePessoas" class="form-control" />
+        <span asp-validation-for="QuantidadePessoas" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="Data" class="control-label">Data:</label>
+        <input asp-for="Data" class="form-control" type="date" />
+        <span asp-validation-for="Data" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="EventoId" class="control-label">Evento:</label>
+        <select asp-for="EventoId" class="form-control">
+            <option value="">Selecione um evento</option>
+            @foreach (var evento in ViewBag.Eventos)
+            {
+                <option value="@evento.EventoId">@evento.EventoId - @evento.Nome</option>
+            }
+        </select>
+        <span asp-validation-for="EventoId" class="text-danger"></span>
+    </div>
+
+
+    <div class="form-group">
+        <label asp-for="TuristaId" class="control-label">Turista:</label>
+        <select asp-for="TuristaId" class="form-control">
+            <option value="">Selecione um turista</option>
+            @foreach (var turista in ViewBag.Turistas)
+            {
+                <option value="@turista.TuristaId">@turista.TuristaId - @turista.Nome</option>
+            }
+        </select>
+        <span asp-validation-for="EventoId" class="text-danger"></span>
+    </div>
+
+    <button type="submit" class="btn btn-primary">Salvar</button>
+</form>

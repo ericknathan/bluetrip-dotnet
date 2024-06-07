@@ -1,0 +1,39 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+    ViewData["Title"] = "Turistas";
+}
+
+@model List<TuristaModel>
+
+<h2>Turistas</h2>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Nome</th>
+            <th>Telefone</th>
+            <th>Email</th>
+            <th>Ações</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var agendamento in Model)
+        {
+            <tr>
+                <td>@agendamento.TuristaId</td>
+                <td>@agendamento.Nome</td>
+                <td>@agendamento.Telefone</td>
+                <td>@agendamento.Email</td>
+                <td>
+                    <a asp-controller="Turista" asp-action="Edit" asp-route-ID="@agendamento.TuristaId">Editar</a>
+                    <a asp-controller="Turista" asp-action="Delete" asp-route-ID="@agendamento.TuristaId">Excluir</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+<a asp-controller="Turista" asp-action="Create">Novo turista</a>

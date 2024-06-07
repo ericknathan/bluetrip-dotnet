@@ -1,0 +1,44 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+
+@model List<PontoTuristicoModel>
+
+<h2>Pontos turísticos</h2>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Nome</th>
+            <th>Preço</th>
+            <th>Imagem</th>
+            <th>Telefone</th>
+            <th>Categoria</th>
+            <th>Endereço</th>
+            <th>Ações</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var pontoTuristico in Model)
+        {
+            <tr>
+                <td>@pontoTuristico.PontoTuristicoId</td>
+                <td>@pontoTuristico.Nome</td>
+                <td>@pontoTuristico.Preco.ToString("C")</td>
+                <td><img src="@pontoTuristico.UrlImagem" alt="@pontoTuristico.Nome" height="64" /></td>
+                <td>@pontoTuristico.Telefone</td>
+                <td>@pontoTuristico.Categoria</td>
+                <td>@pontoTuristico.Endereco.Rua, @pontoTuristico.Endereco.Numero, <br /> @pontoTuristico.Endereco.Bairro, @pontoTuristico.Endereco.Cidade - @pontoTuristico.Endereco.Estado</td>
+                <td>
+                    <a asp-controller="PontoTuristico" asp-action="Edit" asp-route-ID="@pontoTuristico.PontoTuristicoId">Editar</a>
+                    <a asp-controller="PontoTuristico" asp-action="Delete" asp-route-ID="@pontoTuristico.PontoTuristicoId">Excluir</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+<a asp-controller="PontoTuristico" asp-action="Create">Novo ponto turístico</a>

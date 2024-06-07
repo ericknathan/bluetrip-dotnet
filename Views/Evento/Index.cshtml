@@ -1,0 +1,43 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+    ViewData["Title"] = "Eventos";
+}
+
+@model List<EventoModel>
+
+<h2>Eventos</h2>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Nome</th>
+            <th>Preço</th>
+            <th>Imagem</th>
+            <th>Data de início</th>
+            <th>Data de fim</th>
+            <th>Ações</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var evento in Model)
+        {
+            <tr>
+                <td>@evento.EventoId</td>
+                <td>@evento.Nome</td>
+                <td>@evento.Preco.ToString("C")</td>
+                <td><img src="@evento.UrlImagem" alt="@evento.Nome" height="64" /></td>
+                <td>@evento.DataInicio.ToString("dd/MM/yyyy")</td>
+                <td>@evento.DataFim.ToString("dd/MM/yyyy")</td>
+                <td>
+                    <a asp-controller="Evento" asp-action="Edit" asp-route-ID="@evento.EventoId">Editar</a>
+                    <a asp-controller="Evento" asp-action="Delete" asp-route-ID="@evento.EventoId">Excluir</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+<a asp-controller="Evento" asp-action="Create">Novo evento</a>

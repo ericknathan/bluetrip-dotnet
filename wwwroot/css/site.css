@@ -1,0 +1,51 @@
+* {
+    font-family: 'Poppins', sans-serif;
+}
+
+html {
+  font-size: 14px;
+}
+
+@media (min-width: 768px) {
+  html {
+    font-size: 16px;
+  }
+}
+
+html {
+  position: relative;
+  min-height: 100%;
+}
+
+body {
+  margin-bottom: 60px;
+}
+
+label {
+    font-size: 14px !important;
+}
+
+button, input, select {
+    height: 40px !important;
+    border-radius: 6px !important;
+    font-size: 14px !important;
+}
+
+.btn:focus, .btn:active:focus, .btn-link.nav-link:focus, .form-control:focus, .form-check-input:focus, .form-select:focus {
+    box-shadow: 0 0 0 0.125rem #1746A255;
+}
+
+.btn-primary {
+    background-color: #1746A2;
+    border-color: #FFFFFF1A;
+    font-weight: 500 !important;
+}
+
+.btn-primary:hover, .btn-primary:active, .btn-primary:focus {
+    background-color: #123B8D;
+    border-color: #FFFFFF1A;
+}
+
+a {
+    color: #1746A2;
+}
