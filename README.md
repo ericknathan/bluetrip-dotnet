@@ -22,3 +22,5 @@ As principais tecnologias, bibliotecas, ecossistemas e frameworks incluídos no 
 - HTML, CSS e JavaScript
 
 ## 🖌️ Vídeo da aplicação
+https://github.com/ericknathan/bluetrip-dotnet/assets/53922235/00eeb2c6-cb1c-48dc-8755-1f1fde4e1974
+
