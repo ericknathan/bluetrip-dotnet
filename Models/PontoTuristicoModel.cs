@@ -23,7 +23,9 @@ public class PontoTuristicoModel
 
     [Required]
     public String UrlImagem { get; set; }
-    
+
+    [Required]
+    [StringLength(15)]
     public String? Telefone { get; set; }
 
     [Required]

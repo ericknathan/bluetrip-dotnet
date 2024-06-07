@@ -15,7 +15,7 @@ public class TuristaModel
     public String Nome { get; set; }
 
     [Required]
-    [StringLength(100)]
+    [StringLength(15)]
     public String Telefone { get; set; }
 
     [Required]
